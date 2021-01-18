@@ -17,7 +17,7 @@ foreach($arResult as $arItem):?>
 
 		<?if ($arItem["DEPTH_LEVEL"] == 1):?>
 			<li><a href="<?=$arItem["LINK"]?>">
-				<span style="padding: 0px 41.6667px;">
+				<span>
 					<?=$arItem["TEXT"]?>
 				</span>
 			</a>
@@ -37,7 +37,7 @@ foreach($arResult as $arItem):?>
 			<?if ($arItem["DEPTH_LEVEL"] == 1):?>
 				<li>
 					<a href="<?=$arItem["LINK"]?>">
-						<span style="padding: 0px 41.6667px;">
+						<span>
 							<?=$arItem["TEXT"]?>
 						</span>
 					</a>
