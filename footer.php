@@ -109,7 +109,7 @@
 		</div>
 	</div>
 	
-<script src="https://use.fontawesome.com/22df9aa235.js"></script>
+<!--<script src="https://use.fontawesome.com/22df9aa235.js"></script>-->
 
 </body>
 </html>

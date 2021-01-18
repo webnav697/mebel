@@ -5,19 +5,19 @@
 	<?IncludeTemplateLangFile(__FILE__); //Подключение языковых файлов как раньше?>
 	<meta http-equiv="Content-Type" content="text/html; charset=<?=LANG_CHARSET;?>" />
 	<title><?$APPLICATION->ShowTitle()?></title>
-	<?$APPLICATION->ShowCSS(); ?>
-	<?$APPLICATION->ShowHeadStrings() ?>
+	<?$APPLICATION->ShowCSS();?><!--Выводит все стили, но мешает Бутстрап -->
+<?use Bitrix\Main\Page\Asset;?>
+	<?$APPLICATION->ShowHeadStrings()?>
 	<?$APPLICATION->ShowHeadScripts()?> 
-	<?use Bitrix\Main\Page\Asset;?>
-	<?Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery-1.8.2.min.js");?>
-	<?Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/slides.min.jquery.js");?>
-	<?Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.carouFredSel-6.1.0-packed.js");?>
-	<? Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/functions.js");?>
+	
+	<?Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/jquery-1.8.2.min.js");?>
+	<?Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/slides.min.jquery.js");?>
+	<?Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/jquery.carouFredSel-6.1.0-packed.js");?>
+	<?Asset::getInstance()->addJs(SITE_TEMPLATE_PATH."/js/functions.js");?>
 <link rel="icon" href="<?=SITE_TEMPLATE_PATH?>/favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="<?=SITE_TEMPLATE_PATH?>/favicon.ico" type="image/x-icon" />
-<link rel="icon" type="" sizes="192x192" href="/local/ico/android-icon-192x192.png">
-<!--<link rel="stylesheet" href="/bitrix/css/main/bootstrap.css">-->
-<link rel="stylesheet" href="/bitrix/css/main/font-awesome.css">
+<!--<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH?>/css/template.css">
+<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH?>/css/style.css">-->
 	
 	<!--[if gte IE 9]><style type="text/css">.gradient {filter: none;}</style><![endif]-->
 </head>
@@ -69,59 +69,29 @@
 						</td>
 					</tr>
 				</table>
-			<!--	<div class="nv_topnav">
-					<ul>
-						<li><a href="/"   class="menu-img-fon"  style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/nv_home.png);" ><span></span></a></li>
-						<li><a href=""><span>Компания</span></a>
-							<ul>
-								<li><a href="">Пункт 1</a></li>
-								<li><a href="">Пункт 2</a></li>
-								<li><a href="">Пункт 3</a></li>
-								<li><a href="">Пункт 4</a></li>
-							</ul>
-						</li>
-						<li><a href=""><span>Новости</span></a></li>
-						<li><a href=""><span>Каталог</span></a></li>
-						<li><a href=""><span>Акции</span></a>
-							<ul>
-								<li><a href="">Пункт 1</a>
-									<ul>
-										<li><a href="">Пункт 1</a></li>
-										<li><a href="">Пункт 2</a></li>
-									</ul>
-								</li>
-								<li><a href="">Пункт 2</a></li>
-								<li><a href="">Пункт 3</a></li>
-								<li><a href="">Пункт 4</a></li>
-							</ul>
-						</li>
-						<li><a href=""><span>Партнерам</span></a></li>
-						<li><a href=""><span>Контакты</span></a></li>
-						<div class="clearboth"></div>
-					</ul>	
-				</div>-->
-<?$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"top_menu_mebel", 
-	array(
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "left",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "2",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_TYPE" => "N",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"ROOT_MENU_TYPE" => "top",
-		"USE_EXT" => "N",
-		"COMPONENT_TEMPLATE" => "top_menu_mebel"
-	),
-	false
-);?>
-
+			<!--	menu верхнее -->
+				<?$APPLICATION->IncludeComponent(
+					"bitrix:menu", 
+					"top_menu_mebel", 
+					array(
+						"ALLOW_MULTI_SELECT" => "N",
+						"CHILD_MENU_TYPE" => "left",
+						"DELAY" => "N",
+						"MAX_LEVEL" => "2",
+						"MENU_CACHE_GET_VARS" => array(
+						),
+						"MENU_CACHE_TIME" => "3600",
+						"MENU_CACHE_TYPE" => "N",
+						"MENU_CACHE_USE_GROUPS" => "Y",
+						"ROOT_MENU_TYPE" => "top",
+						"USE_EXT" => "N",
+						"COMPONENT_TEMPLATE" => "top_menu_mebel"
+					),
+					false
+			);?>
 			</div>
 		</div>
+
 <?// Если главная страница
 if (CSite::InDir('/index.php')){?>
 		<!--- // end header area --->
@@ -322,14 +292,19 @@ if (CSite::InDir('/index.php')){?>
 		</div>
 				<?} else {?>
 	<!--- // Конец вывода для Главной --->
-		<div class="bc_breadcrumbs">
-			<ul>
-				<li><a href="">Каталог</a></li>
-				<li><a href="">Мебель</a></li>
-				<li><a href="">Выставки и события</a></li>
-			</ul>
-			<div class="clearboth"></div>
-		</div>
+				<!---->
+			<?$APPLICATION->IncludeComponent(
+	"bitrix:breadcrumb", 
+	"breadgrumb-mebel", 
+	array(
+		"PATH" => "",
+		"SITE_ID" => "s1",
+		"START_FROM" => "1",
+		"COMPONENT_TEMPLATE" => "breadgrumb-mebel"
+	),
+	false
+);?>
+		<!---->
 		<div class="main_container page">
 			<div class="mn_container">
 				<div class="mn_content">

@@ -1,0 +1,36 @@
+.bc_breadcrumbs {
+	background: url(images/workarea_bg.png);
+	box-shadow: inset 0 1px 1px 1px rgba(0, 0, 0, .05), inset 0 -1px 1px 1px rgba(0, 0, 0, .05);
+	padding-bottom: 13px;
+}
+
+.bc_breadcrumbs ul {
+	margin: 0 auto;
+	width: 990px;
+	padding-top:37px;
+}
+
+.bc_breadcrumbs ul li {
+	display: block;
+	float: left;
+	list-style: none;
+	padding: 0 20px;
+	background: url(images/bc_arrow.png) left 65% no-repeat;
+}
+
+.bc_breadcrumbs ul li:first-child {
+	padding-left: 0;
+	background: none;
+}
+
+.bc_breadcrumbs ul li a ,
+.bc_breadcrumbs ul li span{
+	font-size: 12px;
+	color: #4c5d6b;
+	text-decoration: none;
+}
+
+.bc_breadcrumbs ul li a:hover {
+	color: #122534;
+	text-decoration: underline;
+}
