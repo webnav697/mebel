@@ -69,7 +69,7 @@
 						</td>
 					</tr>
 				</table>
-				<div class="nv_topnav">
+			<!--	<div class="nv_topnav">
 					<ul>
 						<li><a href="/"   class="menu-img-fon"  style="background-image: url(<?=SITE_TEMPLATE_PATH?>/images/nv_home.png);" ><span></span></a></li>
 						<li><a href=""><span>Компания</span></a>
@@ -98,8 +98,28 @@
 						<li><a href=""><span>Партнерам</span></a></li>
 						<li><a href=""><span>Контакты</span></a></li>
 						<div class="clearboth"></div>
-					</ul>
-				</div>
+					</ul>	
+				</div>-->
+<?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"top_menu_mebel", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "2",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "top",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => "top_menu_mebel"
+	),
+	false
+);?>
+
 			</div>
 		</div>
 <?// Если главная страница
