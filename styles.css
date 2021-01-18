@@ -1,0 +1,196 @@
+.text-backlight{
+ 	display: block;
+ /*	border-radius: 5px;*/
+	background: #ebf4f9;
+	padding: 10px;
+	margin: 3px;
+	box-shadow: 0 0 5px 0 rgba(228,228,228,.3);
+	border: 1px solid #e3eeef;
+	font-style: italic;
+	border-left: 2px solid #ab9f5c;
+}
+
+/*Цитируемый абзац*/
+p.kquote {
+	border-left: 5px solid #AB9F5C;
+	color: #827E66;
+	font-size: 16px;
+	font-style: italic;
+	line-height: 1.5em;
+	margin-left: 20px;
+	padding: 12px 20px;
+	quotes: none;
+}
+
+/*Цвет шрифта*/
+.piksell-color {
+	color: #007B86;
+}
+
+.bg-primary {
+	background: #60aadb;
+	color: #fff;
+	padding: 4px;
+}
+
+.bg-success {
+	background: #64ba4e;
+	color: #fff;
+	padding: 4px;
+}
+
+.bg-info {
+	background: #9bc6dd;
+	color: #fff;
+	padding: 4px;
+}
+
+.bg-warning {
+	background: #fec139;
+	color: #fff;
+	padding: 4px;
+}
+
+.bg-danger {
+	background: #f2dede;
+	color: #000;
+	padding: 4px;
+}
+
+/*Выделение первой буквы*/
+p.first:first-letter {
+	float: left;
+	font-size: 44px;
+	line-height: 0.35em;
+	margin: 3px 8px 3px 0;
+	padding: 0 2px 2px 0;
+}
+
+/*Крупный шрифт*/
+.dropcap {
+	font-size: 48px;
+	line-height: 100%;
+	font-weight: 500;
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+/*Темный блок*/
+p.bloktel {
+	padding: 10px;
+	color: #fff;
+	background-color: #4A4A4A;
+}
+
+/*Темный блок*/
+p.code span,
+span.code {
+	background-color: #EDEDED;
+	padding: 2px 5px;
+	border-radius: 2px 2px 2px 2px
+}
+
+/*Красный список*/
+ul.licon li {
+	font: 14px Verdana, sans-serif;
+	color: #A00000;
+	font-style: italic;
+	margin-left: 25px;
+	margin-bottom: 6px;
+	padding: 2px 0 3px 10px;
+}
+
+.bxe-list.bxe-lis-blue li{
+	list-style: none;
+}
+.bxe-list.bxe-lis-blue li > i{
+	color: #0083d1;
+}
+
+/*Выделение для первой вуквы 1 уже*/
+.dropcap-alt {
+	float: left;
+	background: #B7D9E2;
+	color: #fff;
+	font-size: 2.2em;
+	padding: 10px 14px;
+	margin-right: 8px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+/*Выделение для первой вуквы 1*/
+.dropcap-alt-h3 {
+	float: left;
+	background: #B7D9E2;
+	color: #fff;
+	font-size: 2.2em;
+	padding: 16px 14px;
+	margin-right: 8px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px
+}
+
+/*Увеличение фразы*/
+.fancyamp {
+	font-family: 'Gabriela', 'Trebuchet MS', serif;
+	font-size: 1.6em;
+}
+
+/*Желтый фон*/
+.highlight {
+	background: #ffa;
+	padding: 1px 2px;
+}
+
+/*Блок с желтым фоном*/
+.notice {
+	display: block;
+	margin: 15px 0;
+	padding: 5px 15px;
+	;
+	background: #fff5af;
+	color: #a79b44;
+	text-shadow: 1px 1px 0 #fff;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+/*Блок с зеленым фоном*/
+.notice-html {
+	display: block;
+	padding: 12px 20px;
+	background: #49A744;
+	color: #fff;
+	text-shadow: 1px 1px 0 #4a4444;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+
+/*Блок с синим фоном*/
+.notice-css {
+	display: block;
+	padding: 12px 20px;
+	background: #449da7;
+	color: #fff;
+	text-shadow: 1px 1px 0 #4a4444;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+
+/*Блок с красным фоном*/
+.notice-js {
+	display: block;
+	padding: 12px 20px;
+	background: #a74491;
+	color: #fff;
+	text-shadow: 1px 1px 0 #4a4444;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
