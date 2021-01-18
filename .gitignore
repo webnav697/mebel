@@ -1,0 +1,12 @@
+/content/
+/example/
+404.php
+*.log
+*.sql
+*.txt
+*.xml
+*.dt
+*.swp
+*.swo
+*.DS_Store
+*.gitignore
