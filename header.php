@@ -30,11 +30,33 @@
 				<table>
 					<tr>
 						<td rowspan="2" class="hd_companyname">
-							<h1><a href="/">Мебельный магазин</a></h1>
+							<h1><a href="/">
+							<?
+							$APPLICATION->IncludeFile(
+							SITE_DIR."include/logo.php",
+							Array(),
+							Array("MODE"=>"php")
+						);
+						?>
+							</a></h1>
 						</td>
 						<td rowspan="2" class="hd_txarea">
-							<span class="tel">8 (495) 212-85-06</span>	<br/>	
-							<span class="workhours"><?=GetMessage('WORK_TIME');?> 9-00 до 18-00</span>						
+							<span class="tel">
+							<?$APPLICATION->IncludeFile(
+									SITE_DIR."include/phone.php",
+									Array(),
+									Array("MODE"=>"php")
+								);
+								?>
+							</span>	<br/>	
+							<span class="workhours"><?=GetMessage('WORK_TIME');?> 
+							<?$APPLICATION->IncludeFile(
+									SITE_DIR."include/work_time.php",
+									Array(),
+									Array("MODE"=>"php")
+								);
+								?>
+							</span>						
 						</td>
 						<td style="width:232px">
 							<form action="">
