@@ -2,6 +2,11 @@
 	padding:0;
 	margin:0;
 }
+/*Стили для того что не ехала вёрстка в header режиме правки*/
+.hd_header [id^=bx_incl_area] {
+    	display: initial;
+    }
+/*end Стили для того что не ехала вёрстка в режиме правки*/
 
 body{font-family:Arial,Helvetica,sans-serif}
 input{outline:none !important}
