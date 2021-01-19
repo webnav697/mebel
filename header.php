@@ -69,25 +69,16 @@
 					</tr>
 					<tr>
 						<td style="padding-top: 11px;">
-							<span class="hd_singin"><a id="hd_singin_but_open" href=""><?=GetMessage('CFT_LOGIN');?></a>
-							<div class="hd_loginform">
-								<span class="hd_title_loginform"><?=GetMessage('CFT_LOGIN');?></span>
-								<form name="" method="" action="">
-					
-									<input placeholder="Логин"  type="text">
-									<input  placeholder="Пароль"  type="password">			
-									<a href="" class="hd_forgotpassword">Забыли пароль</a>
-									
-									<div class="head_remember_me" style="margin-top: 10px">
-										<input id="USER_REMEMBER_frm" name="USER_REMEMBER" value="Y" type="checkbox">
-										<label for="USER_REMEMBER_frm" title="Запомнить меня на этом компьютере">Запомнить меня</label>
-									</div>				
-									<input value="Войти" name="Login" style="margin-top: 20px;" type="submit">
-									</form>
-								<span class="hd_close_loginform">Закрыть</span>
-							</div>
-							</span><br>
-							<a href="" class="hd_signup"><?=GetMessage('CFT_REGISTRATION');?></a>
+							<!-- Компонент формы авторизации -->
+							<?$APPLICATION->IncludeComponent("bitrix:system.auth.form", "auth", Array(
+	"COMPONENT_TEMPLATE" => ".default",
+		"FORGOT_PASSWORD_URL" => "/auth/",	// Страница забытого пароля
+		"PROFILE_URL" => "/auth/personal.php",	// Страница профиля
+		"REGISTER_URL" => "/auth/registration.php",	// Страница регистрации
+		"SHOW_ERRORS" => "Y",	// Показывать ошибки
+	),
+	false
+);?>
 						</td>
 					</tr>
 				</table>
@@ -314,8 +305,11 @@ if (CSite::InDir('/index.php')){?>
 		</div>
 				<?} else {?>
 	<!--- // Конец вывода для Главной --->
-				<!---->
-			<?$APPLICATION->IncludeComponent(
+<!--Если не раздел auth-->
+<?if (CSite::InDir('/auth/')):?>
+<!-- не выводим крошки если раздел auth -->
+<?else:?>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:breadcrumb", 
 	"breadgrumb-mebel", 
 	array(
@@ -326,7 +320,9 @@ if (CSite::InDir('/index.php')){?>
 	),
 	false
 );?>
-		<!---->
+<?endif?>
+		<!--Конец условия по разделу '/auth/'-->
+		
 		<div class="main_container page">
 			<div class="mn_container">
 				<div class="mn_content">
