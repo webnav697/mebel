@@ -108,8 +108,12 @@ input{outline:none !important}
 	color:#000;
 }
 .hd_signup{
-	font-size:13px;
-	color:#000;
+	font-size: 14px;
+	color: #000;
+	background: none;
+	border: none;
+	text-decoration: underline;
+	cursor: pointer;
 }
 .hd_signup:hover,
 .hd_singin>a:hover{text-decoration:none}
