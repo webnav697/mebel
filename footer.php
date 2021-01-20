@@ -4,8 +4,28 @@
 			<?if (CSite::InDir('/index.php')){?>
 				
 			<?} else {?>
-				<div class="sb_sidebar">
-					<div class="sb_nav">
+
+<div class="sb_sidebar">
+<?$APPLICATION->IncludeComponent(
+	"bitrix:menu", 
+	"vertical_mebel", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "2",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "left",
+		"USE_EXT" => "Y",
+		"COMPONENT_TEMPLATE" => "vertical_mebel"
+	),
+	false
+);?>
+				<!--	<div class="sb_nav">
 						<ul>
 							<li class="close"><a href=""><span>Каталог</span></a></li>
 							<li class="close"><a href=""><span>Кухни</span></a></li>
@@ -31,7 +51,7 @@
 								</ul>
 							</li>
 						</ul>
-					</div>		
+					</div>-->		
 
 <!--Включаемая область только для раздела,-->
 <?$APPLICATION->IncludeComponent(
@@ -74,7 +94,8 @@
 		</div>
 			<?}?>
 					<div class="clearboth"></div>
-		</div>	
+		</div>
+	</div>	
 		<div class="ft_footer">
 			<div class="ft_container">
 				<div class="ft_about">
@@ -104,7 +125,7 @@
 				</div>
 				<div class="ft_contacts">
 					<h4><?=GetMessage('FOOTER_CONTACT_INFO_TITLE');?></h4>
-					<!-- vCard        http://help.yandex.ru/webmaster/hcard.pdf      -->
+					
 					<p class="vcard">
 						<span class="adr">
 							<span class="street-address">ул. Летняя стр.12, офис 512</span>
@@ -128,7 +149,5 @@
 		</div>
 	</div>
 	
-<!--<script src="https://use.fontawesome.com/22df9aa235.js"></script>-->
-
 </body>
 </html>
