@@ -111,7 +111,7 @@
 <?// Если главная страница
 if (CSite::InDir('/index.php')){?>
 		<!--- // end header area --->
-	<!--Выводим слайдер на гнлавной-->
+	<!--Выводим слайдер на главной-->
 		<?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"slider_home",
@@ -405,6 +405,7 @@ if (CSite::InDir('/index.php')){?>
 			<div class="mn_container">
 				<div class="mn_content">
 					<div class="main_post">
+
 						<div class="main_title">
 							<p class="title"><?$APPLICATION->ShowTitle(false);?></p>
 						</div>

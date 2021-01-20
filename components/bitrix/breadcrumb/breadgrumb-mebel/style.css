@@ -15,7 +15,7 @@
 	float: left;
 	list-style: none;
 	padding: 0 20px;
-	background: url(images/bc_arrow.png) left 65% no-repeat;
+	background: url(./images/bc_arrow.png) left 65% no-repeat;
 }
 
 .bc_breadcrumbs ul li:first-child {
