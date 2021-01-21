@@ -13,7 +13,12 @@
 $this->setFrameMode(true);
 ?>
 
-<?foreach($arResult["ITEMS"] as $arItem):?>		
+<?foreach($arResult["ITEMS"] as $arItem):?>	
+<?
+	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
+	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('NEWS_DELETE_CONFIRM')));
+	?>
+	<div class="news-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">	
 		<?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>
 			<?if(!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])):?>
 			<div class="ps_head">
@@ -40,4 +45,5 @@ $this->setFrameMode(true);
 					<div class="clearboth"></div>
 				<?endif;?>
 		</div>
+	</div>
 <?endforeach;?>
