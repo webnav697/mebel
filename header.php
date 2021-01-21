@@ -393,7 +393,7 @@ if (CSite::InDir('/index.php')){?>
 	array(
 		"PATH" => "",
 		"SITE_ID" => "s1",
-		"START_FROM" => "1",
+		"START_FROM" => "0",
 		"COMPONENT_TEMPLATE" => "breadgrumb-mebel"
 	),
 	false

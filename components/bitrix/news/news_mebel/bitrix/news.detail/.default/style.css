@@ -1,3 +1,10 @@
 .no-title{
 	display: none;;
 }
+.main_post p {
+	display: inline;
+}
+.main_post img,
+.main_post img[align="left"] {
+	margin-bottom: -10px !important;
+}
