@@ -406,7 +406,7 @@ if (CSite::InDir('/index.php')){?>
 				<div class="mn_content">
 					<div class="main_post">
 
-						<div class="main_title">
+						<div class="main_title no-title">
 							<p class="title"><?$APPLICATION->ShowTitle(false);?></p>
 						</div>
 <?}?>			
