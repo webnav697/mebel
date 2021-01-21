@@ -610,9 +610,6 @@ input{outline:none !important}
 .ev_lastevent li:last-child {padding-right:0}
 /* // end events */
 
-.ps_content {
-	min-height: 60px;
-}
 .ps_head  {
     line-height: 20px;
     margin-bottom: 10px ;

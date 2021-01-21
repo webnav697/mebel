@@ -37,6 +37,7 @@ $this->setFrameMode(true);
 				<img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" align="left" alt="<?=$arItem["NAME"]?>"/>
 				<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arItem["PREVIEW_TEXT"]):?>
 					<p><?=$arItem["PREVIEW_TEXT"];?></p>
+					<div class="clearboth"></div>
 				<?endif;?>
 		</div>
 <?endforeach;?>
