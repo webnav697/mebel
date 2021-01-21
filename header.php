@@ -59,12 +59,15 @@
 							</span>						
 						</td>
 						<td style="width:232px">
-							<form action="">
-								<div class="hd_search_form" style="float:right;">
-									<input placeholder="Поиск" type="text"/>
-									<input type="submit" value=""/>
-								</div>
-							</form>
+						<!--Форма поиска-->
+						<?$APPLICATION->IncludeComponent(
+								"bitrix:search.form",
+								"top_search",
+								Array(
+									"PAGE" => "#SITE_DIR#search/index.php",
+									"USE_SUGGEST" => "Y"
+								)
+							);?>
 						</td>
 					</tr>
 					<tr>
