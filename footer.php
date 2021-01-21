@@ -5,6 +5,7 @@
 				
 			<?} else {?>
 
+				
 <div class="sb_sidebar">
 	<!-- Левое меню разделов -->
 <?$APPLICATION->IncludeComponent(
