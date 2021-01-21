@@ -13,8 +13,7 @@
 $this->setFrameMode(true);
 ?>
 
-<?foreach($arResult["ITEMS"] as $arItem):?>
-		
+<?foreach($arResult["ITEMS"] as $arItem):?>		
 		<?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>
 			<?if(!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])):?>
 			<div class="ps_head">
@@ -34,17 +33,10 @@ $this->setFrameMode(true);
 			</div>
 			<?endif;?>
 		<?endif;?>
-			
-			
-
 			<div class="ps_content">
-
-						<img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" align="left" alt=""/>
-			  
-
+				<img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" align="left" alt="<?=$arItem["NAME"]?>"/>
 				<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arItem["PREVIEW_TEXT"]):?>
 					<p><?=$arItem["PREVIEW_TEXT"];?></p>
 				<?endif;?>
-
 		</div>
 <?endforeach;?>
