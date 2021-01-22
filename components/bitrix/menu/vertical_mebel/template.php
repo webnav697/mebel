@@ -5,6 +5,7 @@
 <ul>
 
 <?
+//dump($arResult);
 $previousLevel = 0;
 foreach($arResult as $arItem):?>
 
@@ -15,34 +16,53 @@ foreach($arResult as $arItem):?>
 	<?if ($arItem["IS_PARENT"]):?>
 
 		<?if ($arItem["DEPTH_LEVEL"] == 1):?>
-			<li class="close current">
-			<span class="sb_showchild"></span>
+				<?if ($arItem["SELECTED"] == 1) :?>
+					<li class="open selected">
+					<?else:?>
+					<li class="close current">
+				<?endif?>
+				<span class="sb_showchild"></span>
 				<a href="<?=$arItem["LINK"]?>">
 						<span><?=$arItem["TEXT"]?></span>
 				</a>
-				<ul>					
+				<ul>
 		<?else:?>
-			<li class="close">
+				<?if ($arItem["SELECTED"] == 1) :?>
+					<li class="close selected">
+					<?else:?>
+					<li class="close">
+				<?endif?>
 				<a href="<?=$arItem["LINK"]?>">
 					<span><?=$arItem["TEXT"]?></span>
 				 </a>
 			</li>
-		<ul>
+				<ul>			
 		<?endif?>
+		
+		
 
 	<?else:?>
 
 		<?if ($arItem["PERMISSION"] > "D"):?>
 
 			<?if ($arItem["DEPTH_LEVEL"] == 1):?>
-				<li class="close">				
-					<a href="<?=$arItem["LINK"]?>">
+				<?if ($arItem["SELECTED"] == 1) :?>
+					<li class="close selected">
+					<?else:?>
+					<li class="close ">
+				<?endif?>				
+					<a  href="<?=$arItem["LINK"]?>">
 					<span><?=$arItem["TEXT"]?></span>
-				</a>
-			</li>
+					</a>
+				</li>		
+				
 			<?else:?>
-				<li class="open close">
-				 <a href="<?=$arItem["LINK"]?>">
+				<?if ($arItem["SELECTED"] == 1) :?>
+					<li class="open close selected">
+					<?else:?>
+					<li class="open close">
+				<?endif?>
+				 <a  href="<?=$arItem["LINK"]?>">
 					<span><?=$arItem["TEXT"]?></span>
 				 </a>
 			  </li>
