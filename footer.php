@@ -75,7 +75,9 @@
 		<div class="ft_footer">
 			<div class="ft_container">
 				<div class="ft_about">
-					<h4>О магазине</h4>
+				<!-- Нижнее меню 1 статичное -->
+					<h4><?=$GetMessage('ABOUT_STORE');?>
+					</h4>
 						<?$APPLICATION->IncludeComponent(
 							"bitrix:menu",
 							"bootom-1",
@@ -93,8 +95,11 @@
 							)
 						);?>
 				</div>
+				<!-- end нижнее меню 1 -->
+
+				<!-- Нижнее меню 2 динамический вывод разделов каталога -->
 				<div class="ft_catalog">
-					<h4>Каталог товаров</h4>
+					<h4></h4>
 						<?$APPLICATION->IncludeComponent(
 							"bitrix:menu", 
 							"bootom-2", 
@@ -113,9 +118,10 @@
 								"COMPONENT_TEMPLATE" => "bootom-2"
 							),
 							false
-						);?>
-					
+						);?>				
 				</div>
+				<!-- end нижнее меню 2 -->
+
 				<div class="ft_contacts">
 					<h4><?=GetMessage('FOOTER_CONTACT_INFO_TITLE');?></h4>
 					
