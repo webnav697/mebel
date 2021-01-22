@@ -8,8 +8,14 @@
     }
 /*end Стили для того что не ехала вёрстка в режиме правки*/
 
+li.close {/* Перебиваю стили Bootstrapa для каталога*/
+	float: none !important;
+	opacity: 1 !important;
+	font-weight: inherit;
+}
 body{font-family:Arial,Helvetica,sans-serif}
 input{outline:none !important}
+
 /* header area */
 .hd_header_area{
 	background:url(images/hd_bg.png);
@@ -1349,6 +1355,8 @@ input{outline:none !important}
 .ft_about{
 	width:140px;
 	padding-right:60px;
+	box-sizing: initial;
+	/*Добавил 	box-sizing, иначе Бутсрап убивает вёрстку и она едет*/
 }
 .ft_about h4,
 .ft_catalog h4,
