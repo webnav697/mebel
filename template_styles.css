@@ -1351,6 +1351,8 @@ input{outline:none !important}
 .ft_catalog,
 .ft_contacts{
 	float:left;
+		box-sizing: initial;
+		/*Добавил 	box-sizing, иначе Бутсрап убивает вёрстку и она едет*/
 }
 .ft_about{
 	width:140px;
@@ -1358,6 +1360,11 @@ input{outline:none !important}
 	box-sizing: initial;
 	/*Добавил 	box-sizing, иначе Бутсрап убивает вёрстку и она едет*/
 }
+.product-item-image-alternative {
+	z-index: 13;
+	opacity: 1;
+}
+
 .ft_about h4,
 .ft_catalog h4,
 .ft_contacts h4{
