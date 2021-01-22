@@ -1360,6 +1360,7 @@ input{outline:none !important}
 		box-sizing: initial;
 		/*Добавил 	box-sizing, иначе Бутсрап убивает вёрстку и она едет*/
 }
+
 .ft_about{
 	width:140px;
 	padding-right:60px;

@@ -7,6 +7,6 @@ $MESS["CFT_FEATURED"] = "Спецпредложение";
 
 $MESS["CFT_LOGIN"] = "Войти на сайт";
 $MESS["CFT_REGISTRATION"] = "Зарегистрироваться";
-$MESS["WORK_TIME"] = "Время работы"; 
+$MESS["WORK_TIME"] = "Время работы: "; 
 
 ?>

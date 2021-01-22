@@ -74,17 +74,17 @@
 						<td style="padding-top: 11px;">
 							<!-- Компонент формы авторизации -->
 							<?$APPLICATION->IncludeComponent(
-	"bitrix:system.auth.form", 
-	"auth", 
-	array(
-		"COMPONENT_TEMPLATE" => "auth",
-		"FORGOT_PASSWORD_URL" => "/auth/",
-		"PROFILE_URL" => "/auth/personal.php",
-		"REGISTER_URL" => "/auth/registration.php",
-		"SHOW_ERRORS" => "Y"
-	),
-	false
-);?>
+										"bitrix:system.auth.form", 
+										"auth", 
+										array(
+											"COMPONENT_TEMPLATE" => "auth",
+											"FORGOT_PASSWORD_URL" => "/auth/",
+											"PROFILE_URL" => "/auth/personal.php",
+											"REGISTER_URL" => "/auth/registration.php",
+											"SHOW_ERRORS" => "Y"
+										),
+										false
+									);?>
 						</td>
 					</tr>
 				</table>

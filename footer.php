@@ -127,10 +127,42 @@
 					
 					<p class="vcard">
 						<span class="adr">
-							<span class="street-address">ул. Летняя стр.12, офис 512</span>
+							<span class="street-address">
+							<?$APPLICATION->IncludeComponent(
+									"bitrix:main.include",
+									"",
+									Array(
+										"AREA_FILE_SHOW" => "file",
+										"AREA_FILE_SUFFIX" => "inc",
+										"EDIT_TEMPLATE" => ".default",
+										"PATH" => "include/adress.html"
+									)
+								);?>
+								</span>
+							</span>
+						
+						<span class="tel">
+						<?$APPLICATION->IncludeComponent(
+									"bitrix:main.include",
+									"",
+									Array(
+										"AREA_FILE_SHOW" => "file",
+										"AREA_FILE_SUFFIX" => "inc",
+										"EDIT_TEMPLATE" => ".default",
+										"PATH" => "include/phone.php"
+									)
+								);?>
 						</span>
-						<span class="tel">8 (495) 212-85-06</span>
-						<strong>Время работы:</strong> <br/> <span class="workhours">ежедневно с 9-00 до 18-00</span><br/>
+						<strong><?=GetMessage('WORK_TIME');?></strong> <br/> 
+						
+						<span class="workhours"> 
+							<?$APPLICATION->IncludeFile(
+									SITE_DIR."include/work_time.php",
+									Array(),
+									Array("MODE"=>"php")
+								);
+								?>	
+						</span><br/>
 					</p>
 					<ul class="ft_solcial">
 						<li><a href="" class="fb"></a></li>
@@ -138,7 +170,14 @@
 						<li><a href="" class="ok"></a></li>
 						<li><a href="" class="vk"></a></li>
 					</ul>
-					<div class="ft_copyright">© 2000 - 2012 "Мебельный магазин" </div>
+					<div class="ft_copyright">
+								<?$APPLICATION->IncludeFile(
+									SITE_DIR."include/copyright_mebel.php",
+									Array(),
+									Array("MODE"=>"php")
+								);
+								?>
+					</div>
 					
 					
 				</div>
