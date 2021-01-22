@@ -76,7 +76,7 @@
 			<div class="ft_container">
 				<div class="ft_about">
 				<!-- Нижнее меню 1 статичное -->
-					<h4><?=$GetMessage('ABOUT_STORE');?>
+					<h4><?=GetMessage('ABOUT_STORE');?>
 					</h4>
 						<?$APPLICATION->IncludeComponent(
 							"bitrix:menu",
@@ -99,7 +99,7 @@
 
 				<!-- Нижнее меню 2 динамический вывод разделов каталога -->
 				<div class="ft_catalog">
-					<h4></h4>
+					<h4><?=GetMessage('PRODUCTS')?></h4>
 						<?$APPLICATION->IncludeComponent(
 							"bitrix:menu", 
 							"bootom-2", 
