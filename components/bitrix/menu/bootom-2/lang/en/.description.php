@@ -1,4 +1,4 @@
 <?
-$MESS ['MENU_DOT_DEFAULT_NAME'] = "Default vertical menu";
-$MESS ['MENU_DOT_DEFAULT_DESC'] = "Default vertical menu";
+$MESS ['MENU_DOT_DEFAULT_NAME'] = "Bottom menu 2";
+$MESS ['MENU_DOT_DEFAULT_DESC'] = "Bottom menu 2";
 ?>
