@@ -9,6 +9,13 @@
 	width: 990px;
 	padding-top:37px;
 }
+.bc_breadcrumbs ul {
+	padding-top:37px;
+}
+
+#bx_incl_area_7 > .bc_breadcrumbs > ul{
+	padding-top:17px;
+}
 
 .bc_breadcrumbs ul li {
 	display: block;
