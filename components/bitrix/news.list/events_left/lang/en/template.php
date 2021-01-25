@@ -1,0 +1,3 @@
+<?
+$MESS ['EVENTS'] = "Events soon";
+?>

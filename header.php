@@ -90,24 +90,24 @@
 				</table>
 			<!--	menu верхнее -->
 				<?$APPLICATION->IncludeComponent(
-					"bitrix:menu", 
-					"top_menu_mebel", 
-					array(
-						"ALLOW_MULTI_SELECT" => "N",
-						"CHILD_MENU_TYPE" => "left",
-						"DELAY" => "N",
-						"MAX_LEVEL" => "2",
-						"MENU_CACHE_GET_VARS" => array(
-						),
-						"MENU_CACHE_TIME" => "3600",
-						"MENU_CACHE_TYPE" => "N",
-						"MENU_CACHE_USE_GROUPS" => "Y",
-						"ROOT_MENU_TYPE" => "top",
-						"USE_EXT" => "N",
-						"COMPONENT_TEMPLATE" => "top_menu_mebel"
-					),
-					false
-			);?>
+	"bitrix:menu", 
+	"top_menu_mebel", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "2",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "top",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => "top_menu_mebel"
+	),
+	false
+);?>
 			</div>
 		</div>
 
@@ -187,79 +187,222 @@ if (CSite::InDir('/index.php')){?>
 			
 			<!-- events -->
 			<div class="ev_events">
-				<div class="ev_h">
-					<h3>Ближайшие события</h3>
-					<a href="" class="ev_allevents">Все мероприятия &rarr;</a>
-				</div>
-				<ul class="ev_lastevent">
-					<li>
-						<h4><a href="">29 августа 2012, Москва</a></h4>
-						<p>Семинар производителей мебели России и СНГ, Обсуждение тенденций.</p>
-					</li>
-					<li>
-						<h4><a href="">30 августа 2012, Санкт-Петербург</a></h4>
-						<p>Открытие шоу-рума на Невском проспекте. Последние модели в большом ассортименте.</p>
-					</li>
-					<li>
-						<h4><a href="">31 августа 2012, Краснодар</a></h4>
-						<p>Открытие нового магазина в нашей дилерской сети.</p>
-					</li>
-				</ul>
-				<div class="clearboth"></div>
+	<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"events_home", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "NAME",
+			1 => "PREVIEW_TEXT",
+			2 => "PREVIEW_PICTURE",
+			3 => "DETAIL_TEXT",
+			4 => "DATE_ACTIVE_FROM",
+			5 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "7",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "3",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "SITY",
+			2 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "ID",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "events_home"
+	),
+	false
+);?>
 			</div>
 			<!-- // end events -->
 			<div class="cn_hp_content">
-				<div class="cn_hp_category">
-					<ul>
-						<li>
-							<img src="<?=SITE_TEMPLATE_PATH?>/content/1.png" alt=""/>
-							<h2><a href="">Мягкая мебель</a></h2>
-							<p>Диваны, кресла и прочая мягкая мебель <a class="cn_hp_categorymore" href="">&rarr;</a></p>
-							<div class="clearboth"></div>
-						</li>
-						<li>
-							<img src="<?=SITE_TEMPLATE_PATH?>/content/2.png" alt=""/>
-							<h2><a href="">Офисная мебель</a></h2>
-							<p>Диваны, столы, стулья <a class="cn_hp_categorymore" href="">&rarr;</a></p>
-							<div class="clearboth"></div>
-						</li>
-						<li>
-							<img src="<?=SITE_TEMPLATE_PATH?>/content/3.png" alt=""/>
-							<h2><a href="">Мебель для кухни</a></h2>
-							<p>Полки, ящики, столы и стулья <a class="cn_hp_categorymore" href="">&rarr;</a></p>
-							<div class="clearboth"></div>
-						</li>
-						<li>
-							<img src="<?=SITE_TEMPLATE_PATH?>/content/4.png" alt=""/>
-							<h2><a href="">Детская мебель</a></h2>
-							<p>Кровати, стулья, мягкая детская мебель <a class="cn_hp_categorymore" href="">&rarr;</a></p>
-							<div class="clearboth"></div>
-						</li>
-					</ul>
-					<a href="" class="cn_hp_category_more">Все разделы каталога &rarr;</a>
-				</div>
-				<div class="cn_hp_post">
-					<div class="cn_hp_post_new">
-						<h3>Новинки</h3>
-						<img src="<?=SITE_TEMPLATE_PATH?>/content/7.png" alt=""/>
-						<p>Угловой диван "Титаник", с большим выбором расцветок и фактур.</p>
-						<div class="clearboth"></div>
-					</div>
-					<div class="cn_hp_post_action">
-						<h3>Акции</h3>
-						<img src="<?=SITE_TEMPLATE_PATH?>/content/7.png" alt=""/>
-						<p>Угловой диван "Титаник", с большим выбором расцветок и фактур.</p>
-						<div class="clearboth"></div>
-					</div>
-					<div class="cn_hp_post_bestsellersn">
-						<h3>Хиты продаж</h3>
-						<img src="<?=SITE_TEMPLATE_PATH?>/content/7.png" alt=""/>
-						<p>Угловой диван "Титаник", с большим выбором расцветок и фактур.</p>
-						<div class="clearboth"></div>
-					</div>
-				</div>
-				<!--правый блок новостей-->
-						<?$APPLICATION->IncludeComponent(
+<!-- Список разделов каталога слева-->
+<?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section.list", 
+	"list_home", 
+	array(
+		"ADD_SECTIONS_CHAIN" => "N",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => "list_home",
+		"COUNT_ELEMENTS" => "Y",
+		"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+		"FILTER_NAME" => "sectionsFilter",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "products",
+		"SECTION_CODE" => "",
+		"SECTION_FIELDS" => array(
+			0 => "NAME",
+			1 => "DESCRIPTION",
+			2 => "",
+		),
+		"SECTION_ID" => $_REQUEST["SECTION_ID"],
+		"SECTION_URL" => "",
+		"SECTION_USER_FIELDS" => array(
+			0 => "",
+			1 => "",
+		),
+		"SHOW_PARENT_NAME" => "Y",
+		"TOP_DEPTH" => "1",
+		"VIEW_MODE" => "LINE"
+	),
+	false
+);?>
+<div class="cn_hp_post">
+<div class="cn_hp_post_new"><!-- В <h3 -> TITLE Новинка-->
+<h3>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"PATH" => "/include/title_new.php"
+	),
+	false
+);?>
+</h3>
+<?$APPLICATION->IncludeComponent(
+	"myComp:element.random", 
+	".default", 
+	array(
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "180",
+		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => ".default",
+		"DETAIL_URL" => "#SITE_DIR#/products/#SECTION_ID#/#ID#/",
+		"IBLOCKS_PROP" => "19",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "products",
+		"IMG_HEIGHT" => "70",
+		"IMG_WIDTH" => "100",
+		"PARENT_SECTION" => ""
+	),
+	false
+);?>
+	  <div class="clearboth"></div>
+    </div>
+<div class="cn_hp_post_action"><!-- В <h3 -> TITLE Акции-->
+<h3>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"PATH" => "/include/title_actiya.php"
+	),
+	false
+);?>
+</h3>
+<?$APPLICATION->IncludeComponent(
+	"myComp:element.random", 
+	".default", 
+	array(
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "180",
+		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => ".default",
+		"DETAIL_URL" => "#SITE_DIR#/products/#SECTION_ID#/#ID#/",
+		"IBLOCKS_PROP" => "22",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "products",
+		"IMG_HEIGHT" => "70",
+		"IMG_WIDTH" => "100",
+		"PARENT_SECTION" => ""
+	),
+	false
+);?>
+	<div class="clearboth"></div>
+  </div>
+<div class="cn_hp_post_bestsellersn"><!-- В <h3 -> TITLE Хиты продаж-->
+<h3>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "inc",
+		"EDIT_TEMPLATE" => "",
+		"COMPONENT_TEMPLATE" => ".default",
+		"PATH" => "/include/title_hit.php"
+	),
+	false
+);?>
+</h3>
+<?$APPLICATION->IncludeComponent(
+	"myComp:element.random", 
+	".default", 
+	array(
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "180",
+		"CACHE_TYPE" => "A",
+		"COMPONENT_TEMPLATE" => ".default",
+		"DETAIL_URL" => "#SITE_DIR#/products/#SECTION_ID#/#ID#/",
+		"IBLOCKS_PROP" => "23",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "products",
+		"IMG_HEIGHT" => "70",
+		"IMG_WIDTH" => "100",
+		"PARENT_SECTION" => ""
+	),
+	false
+);?>
+		<div class="clearboth"></div>
+	</div>
+</div>
+<!--правый блок новостей-->
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"news_right", 
 	array(
@@ -284,8 +427,10 @@ if (CSite::InDir('/index.php')){?>
 		"DISPLAY_PREVIEW_TEXT" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
 		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "NAME",
+			1 => "PREVIEW_PICTURE",
+			2 => "DATE_ACTIVE_FROM",
+			3 => "",
 		),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
@@ -307,7 +452,8 @@ if (CSite::InDir('/index.php')){?>
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array(
 			0 => "",
-			1 => "",
+			1 => "PROP",
+			2 => "",
 		),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
@@ -324,67 +470,86 @@ if (CSite::InDir('/index.php')){?>
 	),
 	false
 );?>
-				<!-- end правй блок новостей-->
-				<div class="clearboth"></div>
-			</div>
-		</div>
-		
-		<script type="text/javascript" >
-			$(document).ready(function(){
-			
-				$("#foo").carouFredSel({
-					items:2,
-					prev:'#rwprev',
-					next:'#rwnext',
-					scroll:{
-						items:1,
-						duration:2000
-					}
-				});	
-			});	
-		</script>
+		<!-- end правый блок новостей-->
+		<div class="clearboth"></div>
+	</div>
+</div>
+
+<script type="text/javascript" >
+	$(document).ready(function(){
 	
-		<div class="rw_reviewed">
-			<div class="rw_slider">
-				<h4>Отзывы</h4>
-				<ul id="foo">
-					<li>
-						<div class="rw_message">
-							<img src="<?=SITE_TEMPLATE_PATH?>/content/8.png" class="rw_avatar" alt=""/>
-							<span class="rw_name">Сергей Антонов</span>
-							<span class="rw_job">Руководитель финансового отдела “Банк+”</span>
-							<p>“Покупал офисные стулья и столы, остался очень доволен! Низкие цены, быстрая доставка, обслуживание на высоте! Спасибо!”</p>
-							<div class="clearboth"></div>
-							<div class="rw_arrow"></div>
-						</div>
-					</li>
-					<li>
-						<div class="rw_message">
-							<img src="<?=SITE_TEMPLATE_PATH?>/content/8.png" class="rw_avatar" alt=""/>
-							<span class="rw_name">Дмитрий Иванов</span>
-							<span class="rw_job">Генеральный директор группы компаний "Офис+"</span>
-							<p>“В магзине предоставили потрясающий выбор расцветок, а также, получил большую скидку по карте постоянного клиента.”</p>
-							<div class="clearboth"></div>
-							<div class="rw_arrow"></div>
-						</div>
-					</li>
-					<li>
-						<div class="rw_message">
-							<img src="<?=SITE_TEMPLATE_PATH?>/content/8.png" class="rw_avatar" alt=""/>
-							<span class="rw_name">Сергей Антонов</span>
-							<span class="rw_job">Руководитель финансового отдела “Банк+”</span>
-							<p>“Покупал офисные стулья и столы, остался очень доволен! Низкие цены, быстрая доставка, обслуживание на высоте! Спасибо!”</p>
-							<div class="clearboth"></div>
-							<div class="rw_arrow"></div>
-						</div>
-					</li>
-				</ul>
-				<div id="rwprev"></div>
-				<div id="rwnext"></div>
-				<a href="" class="rw_allreviewed">Все отзывы</a>
-			</div>
-		</div>
-				<?} else {?>
+		$("#foo").carouFredSel({
+			items:2,
+			prev:'#rwprev',
+			next:'#rwnext',
+			scroll:{
+				items:1,
+				duration:2000
+			}
+		});	
+	});	
+</script>
+	
+<div class="rw_reviewed">
+	<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"slider_reviews",
+	Array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(0=>"PREVIEW_TEXT",1=>"PREVIEW_PICTURE",2=>"DETAIL_TEXT",3=>"DETAIL_PICTURE",4=>"DATE_ACTIVE_FROM",5=>"DATE_CREATE",6=>"",),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "5",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "N",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(0=>"POST",1=>"COMPANY_NAME",2=>"",),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	)
+);?>
+</div>
+		<?} else {?>
 	<!--- // Конец вывода для Главной --->
 <!--Если не раздел auth-->
 <?if (CSite::InDir('/auth/')):?>
@@ -402,16 +567,16 @@ if (CSite::InDir('/index.php')){?>
 	false
 );?>
 <?endif?>
-		<!--Конец условия по разделу '/auth/'-->
-		
-		<div class="main_container page">
-			<div class="mn_container">
-				<div class="mn_content">
-					<div class="main_post">
+<!--Конец условия по разделу '/auth/'-->
 
-						<div class="main_title no-title">
-							<p class="title"><?$APPLICATION->ShowTitle(false);?></p>
-						</div>
+<div class="main_container page">
+	<div class="mn_container">
+		<div class="mn_content">
+			<div class="main_post">
+
+				<div class="main_title no-title">
+					<p class="title"><?$APPLICATION->ShowTitle(false);?></p>
+				</div>
 <?}?>			
 						<!-- workarea -->
 	

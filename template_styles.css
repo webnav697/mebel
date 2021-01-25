@@ -685,7 +685,9 @@ input{outline:none !important}
 .cn_hp_categorymore{
 	color:#205f9c;
 	text-decoration:none;
+	font-weight:normal;
 }
+
 .cn_hp_category ul li h2 a:hover,
 .cn_hp_categorymore:hover{text-decoration:underline}
 .cn_hp_category ul li p{
@@ -699,6 +701,7 @@ input{outline:none !important}
 	color:#4674a7;
 	font-size:14px;
 	text-decoration:none;
+	font-weight: normal;
 }
 .cn_hp_category_more:hover{color:#205f9c}
 
@@ -972,6 +975,7 @@ input{outline:none !important}
     padding: 20px;
     position: relative;
     font-size: 14px;
+	font-weight: normal;
 }
 .sb_nav>ul>li{
 	list-style:none;
@@ -1412,18 +1416,34 @@ input{outline:none !important}
 }
 .ft_contacts{
 	width:230px;
+	
 }
-.ft_contacts p{
+.ft_contacts [id^=bx_incl_area]{
+    display: initial;
+}
+.ft_contacts p, .ft_contacts [id^=bx_incl_area]{
 	color:#f3f8fa;
 	padding-top:20px;
 	font-size:15px;
 	text-shadow:0 1px 1px #1b384e;
 }
-.ft_contacts p .tel{
+.ft_contacts [id^=bx_incl_area]{
+	margin: 0;
+	padding:0;
+	display:inline-block;
+}
+.ft_contacts br {
+	display: block;
+}
+.ft_contacts p .tel, 
+.ft_contacts,
+.ft_contacts .tel [id^=bx_incl_area], 
+.ft_contacts  strong {
 	font-weight:bold;
 	padding:8px 0;
 	display:block;
 	font-size:20px;
+	color:#f3f8fa;
 }
 .ft_solcial{
 	display:block;
@@ -1443,10 +1463,12 @@ input{outline:none !important}
 	background:url(images/gui.png) no-repeat;
 	opacity:.8;
 }
-.ft_copyright{
+.ft_copyright, 
+.ft_copyright [id^=bx_incl_area]{
 	color:#b6c6d4;
 	font-size:13px;
 	padding-top:20px;
+	font-weight:normal;
 }
 .ft_solcial li a:hover{opacity:1;}
 .ft_solcial li a.fb{background-position:0 0}
@@ -1459,7 +1481,7 @@ input{outline:none !important}
 .clearboth{clear:both}
 
 .vc_content .close h3 {
-	 padding-top: 00px;
+	 padding-top: 0px;
 }
 .vc_content .close ul {
 	 margin: 00px;
