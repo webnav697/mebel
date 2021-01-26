@@ -264,7 +264,7 @@
 										"AREA_FILE_SHOW" => "file",
 										"AREA_FILE_SUFFIX" => "inc",
 										"EDIT_TEMPLATE" => ".default",
-										"PATH" => "include/work_time.php"
+										"PATH" => "/include/work_time.php"
 									)
 								);?>
 						</span><br/>
