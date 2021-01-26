@@ -4,6 +4,14 @@
 <div class="sb_nav">
 <ul>
 
+	<div class="separator">
+<?if ($APPLICATION->GetCurDir()=='/company/'):?>
+Компания
+<?else:?> 
+Каталог
+<?endif;?>
+
+</div>
 <?
 //dump($arResult);
 $previousLevel = 0;
